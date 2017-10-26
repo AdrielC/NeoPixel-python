@@ -72,7 +72,7 @@ def retard(strip, wait_ms=20, iterations=5):
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
 			x = random.randint(1, 255)
-			strip.setPixelColor(int(x), wheel((int(i * 256 / strip.numPixels()) + j) & 255))
+			strip.setPixelColor(int(x) % i, wheel((int(i * 256 / strip.numPixels()) + j) & 255))
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
