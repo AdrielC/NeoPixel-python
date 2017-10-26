@@ -74,7 +74,7 @@ def retard(strip, wait_ms=1, iterations=5):
 			for x in range(strip.numPixels()):
 				strip.setPixelColor(j % (x + 2), wheel((x+i) & 255))
 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
-				retard(strip)
+				theaterChaseRainbow(strip)
 		strip.show()
 
 # def retard(strip, wait_ms=1, iterations=5):
