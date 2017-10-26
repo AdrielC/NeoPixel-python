@@ -67,7 +67,7 @@ def rainbowCycle(strip, wait_ms=1, iterations=1):
 		strip.show()
 		time.sleep(wait_ms/100000.0)
 
-def retard(strip, wait_ms=1, iterations=20):
+def retard(strip, wait_ms=1, iterations=3:
 	"""This one is retarded."""
 	for j in range(256*iterations):
 		for i in range(1):
