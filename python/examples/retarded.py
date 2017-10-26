@@ -72,9 +72,35 @@ def retard(strip, wait_ms=1, iterations=5):
 	for j in range(256*iterations):
 		rainbowCycle(strip)
 		for i in range(strip.numPixels()):
-			strip.setPixelColor(j % (i + 2), wheel((j+i+30) & 255))
-			strip.setPixelColor(j % (i + 1), wheel((j+i+20) & 255))
-			strip.setPixelColor(j % (i + 5), wheel((j%i+10) & 255))
+			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 5), wheel((j%i+10) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 5), wheel((j%i+10) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 5), wheel((j%i+10) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 5), wheel((j%i+10) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
+			theaterChaseRainbow(strip)
+			strip.setPixelColor(j + 1 % (i + 5), wheel((j%i+10) & 255))
 			theaterChaseRainbow(strip)
 			strip.show()
 		strip.show()
@@ -89,14 +115,14 @@ def retard(strip, wait_ms=1, iterations=5):
 # 		strip.show()
 # 		time.sleep(wait_ms/10000000.0)
 
-def theaterChaseRainbow(strip, wait_ms=50):
+def theaterChaseRainbow(strip, wait_ms=5):
 	"""Rainbow movie theater light style chaser animation."""
 	for j in range(256):
 		for q in range(3):
 			for i in range(0, strip.numPixels(), 3):
 				strip.setPixelColor(i+q, wheel((i+j) % 255))
 			strip.show()
-			time.sleep(wait_ms/1000.0)
+			time.sleep(wait_ms/100000.0)
 			for i in range(0, strip.numPixels(), 3):
 				strip.setPixelColor(i+q, 0)
 
