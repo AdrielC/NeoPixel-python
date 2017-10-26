@@ -68,10 +68,10 @@ def rainbowCycle(strip, wait_ms=20, iterations=5):
 		time.sleep(wait_ms/1000.0)
 
 def retard(strip, wait_ms=1, iterations=5):
-	"""Draw rainbow that uniformly distributes itself across all pixels."""
+	"""This one is retarded."""
 	for j in range(256*iterations):
-		for i in range(3):
-			for x in range(strip.numPixels()):
+		for i in range(strip.numPixels()):
+			for x in range(3):
 				strip.setPixelColor(j % (x + 2), wheel((x+i) & 255))
 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
 		strip.show()
