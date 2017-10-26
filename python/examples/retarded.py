@@ -87,7 +87,8 @@ if __name__ == '__main__':
 
 	print ('Press Ctrl-C to quit.')
 	while True:
-		print ('Color wipe animations.')		retard(strip)
+		print ('Color wipe animations.')
+		retard(strip)
 		retard(strip)
 		retard(strip)
 		retard(strip)
