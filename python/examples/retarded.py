@@ -74,10 +74,13 @@ def retard(strip, wait_ms=1, iterations=5):
 		for i in range(strip.numPixels()):
 			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
 			theaterChaseRainbow(strip)
+			rainbowCycle(strip)
 			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
 			theaterChaseRainbow(strip)
+			rainbowCycle(strip)
 			strip.setPixelColor(3 % (1 + 3), wheel((j%i+11) & 255))
 			theaterChaseRainbow(strip)
+			rainbowCycle(strip)
 			strip.setPixelColor(j + 1 % (i + 2), wheel((j+i+30) & 255))
 			theaterChaseRainbow(strip)
 			strip.setPixelColor(j + 1 % (i + 1), wheel((j+i+20) & 255))
@@ -122,7 +125,7 @@ def theaterChaseRainbow(strip, wait_ms=5):
 			for i in range(0, strip.numPixels(), 3):
 				strip.setPixelColor(i+q, wheel((i+j) % 255))
 			strip.show()
-			time.sleep(wait_ms/100000.0)
+			time.sleep(wait_ms/1000.0)
 			for i in range(0, strip.numPixels(), 3):
 				strip.setPixelColor(i+q, 0)
 
