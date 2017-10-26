@@ -71,9 +71,10 @@ def retard(strip, wait_ms=1, iterations=5):
 	"""This one is retarded."""
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
-			for x in range(3):
+			for x in range(strip.numPixels()):
 				strip.setPixelColor(j % (x + 2), wheel((x+i) & 255))
 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
+				retard(strip)
 		strip.show()
 
 # def retard(strip, wait_ms=1, iterations=5):
