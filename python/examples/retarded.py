@@ -74,7 +74,6 @@ def retard(strip, wait_ms=1, iterations=5):
 			for x in range(strip.numPixels()):
 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
 		strip.show()
-		time.sleep(wait_ms/10000000.0)
 
 # def retard(strip, wait_ms=1, iterations=5):
 # 	"""Draw rainbow that uniformly distributes itself across all pixels."""
