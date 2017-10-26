@@ -67,16 +67,16 @@ def rainbowCycle(strip, wait_ms=20, iterations=5):
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
-def retard(strip, wait_ms=10, iterations=5):
+def retard(strip, wait_ms=1, iterations=5):
 	"""Draw rainbow that uniformly distributes itself across all pixels."""
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
-			for q in range(0, strip.numPixels(), 3):
+			for q in range(0, strip.numPixels(), random.randint(1,120)):
 				strip.setPixelColor(i+q, wheel((i+j) % 255))
 				x = random.randint(1, 255)
 				strip.setPixelColor(q, wheel((int(i + random.randint(1,20) * 256 / strip.numPixels()) + j) & 255))
 		strip.show()
-		time.sleep(wait_ms/10000.0)
+		time.sleep(wait_ms/100000.0)
 
 def theaterChaseRainbow(strip, wait_ms=50):
 	"""Rainbow movie theater light style chaser animation."""
