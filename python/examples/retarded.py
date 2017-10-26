@@ -76,6 +76,15 @@ def retard(strip, wait_ms=1, iterations=5):
 		strip.show()
 		time.sleep(wait_ms/10000000.0)
 
+# def retard(strip, wait_ms=1, iterations=5):
+# 	"""Draw rainbow that uniformly distributes itself across all pixels."""
+# 	for j in range(256*iterations):
+# 		for i in range(strip.numPixels()):
+# 			for x in range(strip.numPixels()):
+# 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
+# 		strip.show()
+# 		time.sleep(wait_ms/10000000.0)
+
 def theaterChaseRainbow(strip, wait_ms=50):
 	"""Rainbow movie theater light style chaser animation."""
 	for j in range(256):
