@@ -71,7 +71,7 @@ def retard(strip, wait_ms=1, iterations=5):
 	"""This one is retarded."""
 	for j in range(256*iterations):
 		rainbowCycle(strip)
-		for i in range(100):
+		for i in range(3):
 			for x in range(strip.numPixels()):
 				strip.setPixelColor(j % (x + 1), wheel((x+i) & 255))
 				strip.setPixelColor(j + 1 % (i%x + 2), wheel((j) & 255))
