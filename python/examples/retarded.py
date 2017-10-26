@@ -66,11 +66,11 @@ def rainbowCycle(strip, wait_ms=20, iterations=5):
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
-def 🈲(strip, wait_ms=20, iterations=5):
+def retard(strip, wait_ms=20, iterations=5):
 	"""Draw rainbow that uniformly distributes itself across all pixels."""
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
-			strip.setPixelColor((i % 3) + i, wheel((((i * randint(0, (255 % i))) / strip.numPixels()) + j) & randint(0, 255)))
+			strip.setPixelColor(i, wheel(((i * 256 / strip.numPixels()) + j) & 255))
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
@@ -93,6 +93,7 @@ if __name__ == '__main__':
 	# Intialize the library (must be called once before other functions).
 	strip.begin()
 
+strip.setPixelColor(int((i + 1) % 3) + i, wheel(((int(i * randint(0, (255 % (i+1))))) / strip.numPixels()) + j))
 	print ('Press Ctrl-C to quit.')
 	while True:
 		🈲(strip)
