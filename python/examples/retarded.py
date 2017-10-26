@@ -70,7 +70,7 @@ def retard(strip, wait_ms=20, iterations=5):
 	"""Draw rainbow that uniformly distributes itself across all pixels."""
 	for j in range(256*iterations):
 		for i in range(strip.numPixels()):
-			strip.setPixelColor(i, wheel(((i * 256 / strip.numPixels()) + j) & 255))
+			strip.setPixelColor((i + 1) % randint(1, 255), wheel(((i * 256 / strip.numPixels()) + j) & 255))
 		strip.show()
 		time.sleep(wait_ms/1000.0)
 
@@ -92,18 +92,11 @@ if __name__ == '__main__':
 	strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)
 	# Intialize the library (must be called once before other functions).
 	strip.begin()
-
-strip.setPixelColor(int((i + 1) % 3) + i, wheel(((int(i * randint(0, (255 % (i+1))))) / strip.numPixels()) + j))
 	print ('Press Ctrl-C to quit.')
 	while True:
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
-		🈲(strip)
+		retard(strip)
+		retard(strip)
+		retard(strip)
+		retard(strip)
+		retard(strip)
+		retard(strip)
